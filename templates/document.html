@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Document' %} {{ doc_id }}: {{ doc.name }}{% endblock %}
+
+{% block content %}
+
+		<div class="jumbotron">
+        <span class="text-center">
+          <h1 class="display-3">{{ doc.name }}</h1>
+          <p class="lead">{{ source_name }}</p>
+        </span>
+          <hr class="my-4">
+            {% if not doc.path %}
+                <p>{{ doc.text }}</p>
+            {% else %}
+                <object data="/{{ doc.path }}" type="application/pdf" width="100%" height="500">
+                    <a href="/{{ doc.path }}">{{ doc.name }}.pdf</a>
+                </object>
+            {% endif %}
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" onclick="history.back()" role="button">{% trans "Back" %}</a>
+          </p>
+        </div>
+
+
+		
+{% endblock %}

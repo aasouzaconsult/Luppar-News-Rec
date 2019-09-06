@@ -1,0 +1,477 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Recommendation" %}{% endblock %}
+{% block content %}
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("/static/img/load.gif") right center no-repeat;
+        }
+
+        .ui-autocomplete {
+            position: absolute;
+            cursor: default; /*max-*/
+            width: 300px;
+            overflow: auto;
+            padding-right: 20px;
+        }
+        .ui-menu .ui-menu-item h4 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+
+	<div class="jumbotron">
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        <span class="text-center">
+          <h1 class="logo"><a href="/recom">Lu<i class="glyphicon glyphicon-search icon-flipped" style="color: gray"><i class="glyphicon glyphicon-search" style="width: 11px;right: 45px;color: black;"></i></i>ar News-Rec</a></h1>
+          
+          <!--{% trans "Receba notícias por E-mail:" %} <input type="text" name="email" size="40"> -->
+          <br><br>
+        </span>
+
+        <span class="text-center">
+           <form class="form-horizontal" action="/search_recomm" method="get">
+                <!-- Aonde tá a barra de pesquisa
+                <div class="row row-eq-height">
+                    <div class="col-xs-12 col-sm-3 col-md-3 vcenter">
+                        <h1 class="logo"><a href="/">Lu<i class="glyphicon glyphicon-search icon-flipped" style="color: gray"><i class="glyphicon glyphicon-search" style="width: 10px;right: 45px;color: black;"></i></i>ar</a></h1>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-9 col-md-9 vcenter">
+                        <span class="hidden-xs">
+                            <br />
+                        </span>
+                        <div class="input-group form-group-lg">
+                              <input type="search" id="search_query" name="q" required="true" class="form-control clearable" placeholder="{% trans "Search" %}..." value="{{ query_text }}" />
+                              <input type="hidden" id="id_query" name="qid" value="{{ qid | default_if_none:'' }}" />
+                              <input type="hidden" id="id_page" name="page" value="1" />
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                              </span>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div id="collapse1" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                              <div class="form-group form-group">
+
+                                      {# Aqui fica a opção das Coleções #}
+                                      <b>{% trans "Receba notícias por E-mail:" %} </b> <input type="text" name="email" size="40">
+
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Coleção" %}</label>
+                                          <select id="source_select" name="source_select" class="form-control">
+                                              <option value="z12news">Z12News</option>
+                                              <option value="z5news">Z5News</option>
+                                              <option value="z5news_brasil">Z5News Brasil</option>
+                                            {% comment %}  {% for source in source_list %}
+                                                <option value="{{ source.slug }}" {% if source.slug == source_select %} selected {% endif %}>{{ source.name }}</option>
+                                              {% endfor %}{% endcomment %}
+                                          </select>
+                                      </div>
+                                      {# Aqui fica a opção das Representações de Documentos #}
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Representação" %}</label>
+                                          {# Ver onde referencia e mudar nome query_processor #}
+                                          <select id="doc_recomm" name="doc_recomm" class="form-control">
+                                              <option value="fasttext_idf">FastText +E2V_IDF</option>
+                                              <option value="w2v_idf">Word2Vec +E2V_IDF</option>
+                                              <option value="bow">BoW</option>
+                                              {% comment %}{% for query_processor in query_processor_list %}
+                                                <option value="{{ query_processor.slug }}" {% if query_processor.slug == query_processor_select %} selected {% endif %}>{{ query_processor.name }}</option>
+                                              {% endfor %}{% endcomment %}
+                                          </select>
+                                      </div>
+                                      {# Aqui fica a opção de Classificadores#}
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Classificador" %}</label>
+                                          {# Ver onde referencia e mudar nome search_model #}
+                                          <select id="class_model" name="class_model" class="form-control">
+                                              <option value="svm">SVM</option>
+                                              <option value="rf">Random Forest (RF)</option>
+                                              {% comment %}{% for search in search_list %}
+                                                <option value="{{ search.slug }}" {% if search.slug == search_model_select %} selected {% endif %}>{{ search.name }}</option>
+                                              {% endfor %}{% endcomment %}
+                                          </select>
+                                      </div>
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Tópicos" %}</label>
+                                          <div class="text-left">
+                                            <input type="checkbox" name="topics[]" value="sportsnews" checked>
+                                              <label for="sportsnews">sportsnews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="politicsNews">
+                                              <label for="politicsNews">politicsNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="technologyNews">
+                                              <label for="technologyNews">technologyNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="PersonalFinance">
+                                              <label for="PersonalFinance">PersonalFinance</label> </br>
+                                            <input type="checkbox" name="topics[]" value="brazil-news">
+                                              <label for="brazil-news">brazil-news</label> </br>
+                                            <input type="checkbox" name="topics[]" value="aerospace-defense">
+                                              <label for="aerospace-defense">aerospace-defense</label> </br>
+                                            <input type="checkbox" name="topics[]" value="autos">
+                                              <label for="autos">autos</label> </br>
+                                            <input type="checkbox" name="topics[]" value="commoditiesNews">
+                                              <label for="commoditiesNews">commoditiesNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="fundsNews">
+                                              <label for="fundsNews">fundsNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="foreignexchangeNews">
+                                              <label for="foreignexchangeNews">foreignexchangeNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="healthnews">
+                                              <label for="healthnews">healthnews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="environmentnews">
+                                              <label for="environmentnews">environmentnews</label> </br>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Tópicos - BR" %}</label>
+                                          <div class="text-left">
+                                            <input type="checkbox" name="topics[]" value="esporteNews">
+                                              <label for="esporteNews">esporteNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="politicaNews">
+                                              <label for="politicaNews">politicaNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="tecnologiaNews">
+                                              <label for="tecnologiaNews">tecnologiaNews</label> </br>
+                                            <input type="checkbox" name="topics[]" value="financaPessoal">
+                                              <label for="financaPessoal">financaPessoal</label> </br>
+                                            <input type="checkbox" name="topics[]" value="educacaonews">
+                                              <label for="educacaonews">educacaonews</label> </br>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Métricas" %}</label>
+                                          <div class="text-center">
+                                            <input type="checkbox" name="metrics_search">
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-2 col-md-2">
+                                          <label class="control-label">{% trans "Recomendar" %}</label>
+                                          <div class="text-center">
+                                            <button class="btn btn-primary btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                          </div>
+                                      </div>
+                              </div>
+                      </div>
+                    </div>
+
+                    {# Detalhando quando selecionado a opção: Métricas (tela abaixo do grid com as opções) #}
+                    <div id="collapse2" class="panel-collapse collapse {% if  metrics_search == 'on' and total_docs > 1 %} in {% endif %}">
+                      <div class="panel-body">
+
+                                 <div class="{% if metrics_search == 'on' and metrics %} col-md-6 {% else  %} col-md-12 {% endif %}">
+                                    <ul class="list-group text-left">
+                                        <li class="list-group-item active text-center"><b>{% trans "Search metadata" %} </b><a href="#" class="badge badge-primary badge-pill">?</a></li>
+                                        <li class="list-group-item"><b>{% trans "Collection" %}:</b> {{ source_result }}</li>
+                                        <li class="list-group-item"><b>{% trans "Search Model" %}:</b> {{ model_result }}</li>
+                                        <li class="list-group-item"><b>{% trans "Query Expansion" %}:</b> {{ expansion_result }}</li>
+                                        <li class="list-group-item"><b>{% trans "Query" %}:</b> {{ query_result }}</li>
+                                    </ul>
+                                 </div>
+
+                            {% if metrics_search == 'on' and metrics %}
+                                <div class="col-md-6">
+                                    <ul class="list-group text-left">
+                                        <li class="list-group-item active text-center"><b>{% trans "Metrics" %}</b><a href="#" class="badge badge-primary badge-pill">?</a></li>
+                                        <li class="list-group-item"><b>{% trans "Retrieved" %}:</b> {{ metrics.num_ret }}</li>
+                                        <li class="list-group-item"><b>{% trans "Relevant" %}:</b> {{ metrics.num_rel }}</li>
+                                        <li class="list-group-item"><b>{% trans "Relevant retrieved" %}:</b> {{ metrics.num_rel_ret }}</li>
+                                        <li class="list-group-item"><b>{% trans "MAP" %}:</b> {{ metrics.map }}</li>
+                                        <li class="list-group-item"><b>{% trans "Gm_MAP" %}:</b> {{ metrics.gm_map }}</li>
+                                        <li class="list-group-item"><b>{% trans "Rprec" %}:</b> {{ metrics.Rprec }}</li>
+                                        <li class="list-group-item"><b>{% trans "Bpref" %}:</b> {{ metrics.bpref }}</li>
+                                        <li class="list-group-item"><b>{% trans "Recip_rank" %}:</b> {{ metrics.recip_rank }}</li>
+                                    </ul>
+                                </div>
+
+
+                              <div class="col-md-12">
+                                        <ul class="list-group text-center">
+                                            <li class="list-group-item active text-center"><b>{% trans "Graphics" %}</b><a href="#" class="badge badge-primary badge-pill">?</a></li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <canvas id="prec_rec_chart" width="400" height="300"></canvas>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <canvas id="prec_chart" width="400" height="300"></canvas>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                              </div>
+                          {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+        </span>
+        {# Painel de Retorno - Documentos Retornados #}
+        {% if total_docs > 1 %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {% if document_related %}<span class="text-right"><b>{% trans "Related documents" %}:</b> "<i>{{ document_related.name }}</i>" ,</span>{% endif %}
+                <b>{{ total_docs }}</b> {% trans "results" %} {% trans "in" %} <b>{{ total_time }}</b> {% trans "seconds" %}
+            </div>
+            <div class="panel-body">
+
+                     <div class="list-group {% if free_search == 'on' or not documents_relevant %} col-md-12 {% else  %} col-md-6 {% endif %}">
+                     <div class="panel-heading"><i>{% trans "Retrieval" %}</i></div>
+                         {% for doc in documents %}
+                             <span class="list-group-item" style="background-color: #ffffe6">
+                                    <span class="badge">{{forloop.counter}}º</span>
+                                    <h4><a href="/document/{{ source_select }}/{{ doc.idd }}">DOC {{ doc.idd }}</a></h4>
+
+                                    <p>{{ doc.prev_text}}...</p>
+                                    <a href="{% relative_url doc.idd 'drid' request.GET.urlencode %}&page=1" class="" title="{% trans "Relevance Feedback" %}"><i class="glyphicon glyphicon-star"></i> {% trans "Related documents" %}...</a>
+
+                             </span>
+                         {% endfor %}
+                     </div>
+
+                    {% if free_search != 'on' and documents_relevant %}
+                        <div class="list-group {% if free_search == 'on' %} col-md-12 {% else  %} col-md-6 {% endif %}">
+                        <div class="panel-heading"><i>{% trans "Relevant" %}</i></div>
+                             {% for doc in documents_relevant %}
+                                 <span class="list-group-item" style="background-color: #e6ffe6">
+                                        <span class="badge">{{forloop.counter}}º</span>
+                                        <h4><a href="/document/{{ source_select }}/{{ doc.idd }}">DOC {{ doc.idd }}</a></h4>
+                                        <p>{{ doc.prev_text}}...</p>
+                                        <a href="{% relative_url doc.idd 'drid' request.GET.urlencode %}&page=1" class="" title="{% trans "Relevance Feedback" %}"><i class="glyphicon glyphicon-star"></i> {% trans "Related documents" %}...</a>
+                                 </span>
+                             {% endfor %}
+                         </div>
+                    {% endif %}
+                    <div class="col-md-12">
+                        {% bootstrap_pagination documents url="/search?"|add:request.GET.urlencode size="large" pages_to_show="9" %}
+                    </div>
+            </div>
+        </div>
+        {% elif query_text %}
+            <div class="notfound">
+                {% blocktrans %}
+                <p>
+                    Your search <b><i>"{{ query_text }}"</i></b> found no corresponding document.
+                </p>
+                <p>
+                    <ul>
+                        <li>Verify that the words are typed correctly</li>
+                        <li>Use other words for your search</li>
+                    </ul>
+                </p>
+                {% endblocktrans %}
+            </div>
+        {% endif %}
+
+        <hr class="my-4">
+
+        {# Botão Voltar #}
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" onclick="history.back()" role="button">{% trans "Back" %}</a>
+        </p>
+
+    </div>
+
+{# Falta Entender #}
+<script type="application/javascript">
+$(document).ready(function() {
+
+        $("#id_query").change(function(){
+            $( "#id_query" ).val();
+        })
+
+        $( "#search_query" )
+            .on( "keydown", function( event ) {
+            if ( event.keyCode === $.ui.keyCode.TAB &&
+                $( this ).autocomplete( "instance" ).menu.active ) {
+              event.preventDefault();
+            }
+          })
+            .autocomplete({
+                  minLength: 0,
+                  source: function( request, response ) {
+                    $.ajax( {
+                      url: "query_preview",
+                      dataType: "json",
+                      data: {
+                        q: request.term,
+                          s: $( "#source_select" ).find(":selected").val()
+                      },
+                      success: function( data ) {
+                        response( data );
+                      }
+                    } );
+                  },
+                change: function (event, ui) {
+                    if(!ui.item){
+                        if(!$("[name='free_search']").bootstrapSwitch('state')){
+                            $("#search_query").val("");
+                        }
+                    }
+                },
+                select: function( event, ui ) {
+                    console.log( "Selected: " + ui.item.fields.text);
+                    this.value = ui.item.fields.text;
+                    $( "#id_query" ).val(ui.item.fields.idq);
+                    return false;
+                }
+            } ).focus(function(){
+                $(this).autocomplete("search");
+            }).change(function(){
+                $( "#id_query" ).val("");
+            }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+                  var length = 100
+                  var re = new RegExp("^" + this.term) ;
+                  var t = item.fields.text.replace(re,"<span style='font-weight:bold;color:Blue;'>" +
+                          this.term +
+                          "</span>");
+                  return $( "<li></li>" )
+                      .data( "item.autocomplete", item )
+                      .append( "<h4 style='overflow-x:hidden; text-overflow: ellipsis; white-space: nowrap;'>" + t +  "</h4>" )
+                      .appendTo( ul );
+            };
+
+            var status_free =  '{{ free_search }}'=='on'? true : false;
+            var status_metrics =  '{{ metrics_search }}'=='on'? true : false;
+
+
+		    $("[name='free_search']").bootstrapSwitch({
+
+				 handleWidth:'50px',
+				 labelWidth:'50px',
+				 onText:'{% trans "Yes" %}',
+				 offText:'{% trans "No" %}',
+				 inverse:false,
+				 state:true,
+				 onColor:'success',
+				 offColor:'info',
+            });
+
+		    $("[name='free_search']").bootstrapSwitch('state',status_free);
+
+		    $("[name='metrics_search']").bootstrapSwitch({
+
+				 handleWidth:'50px',
+				 labelWidth:'50px',
+				 onText:'{% trans "Yes" %}',
+				 offText:'{% trans "No" %}',
+				 inverse:false,
+				 state:false,
+				 onColor:'success',
+				 offColor:'info',
+            });
+
+		    $("[name='metrics_search']").bootstrapSwitch('state',status_metrics);
+
+
+
+
+        });
+</script>
+
+<!-- Graficos -->
+<script>
+        window.chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(231,233,237)'
+        };
+
+        function createConfig(details, data, label) {
+            return {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [{
+                        label: details.curveLabel,
+                        steppedLine: details.steppedLine,
+                        data: data,
+                        borderColor: details.color,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: details.label,
+                    },
+                    scales: {
+                        yAxes: [{
+                          scaleLabel: {
+                            display: true,
+                            labelString: details.yLabel
+                          }
+                        }],
+                        xAxes: [{
+                          scaleLabel: {
+                            display: true,
+                            labelString: details.xLabel
+                          }
+                        }],
+                      }
+                }
+            };
+        }
+
+
+        window.onload = function () {
+            var prec_rec_chart = document.getElementById("prec_rec_chart");
+            var prec_chart = document.getElementById("prec_chart");
+
+            {% autoescape off %}
+                var metrics  = {{ metrics }}
+            {% endautoescape %}
+
+            var data = [metrics['iprec_at_recall_0.00'], metrics['iprec_at_recall_0.10'], metrics['iprec_at_recall_0.20'],
+                        metrics['iprec_at_recall_0.30'], metrics['iprec_at_recall_0.40'], metrics['iprec_at_recall_0.50'],
+                        metrics['iprec_at_recall_0.60'], metrics['iprec_at_recall_0.70'], metrics['iprec_at_recall_0.80'],
+                        metrics['iprec_at_recall_0.90'], metrics['iprec_at_recall_1.00']];
+            var label = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+            var data2 = [metrics['P_5']*100, metrics['P_10']*100, metrics['P_15']*100,
+                        metrics['P_20']*100, metrics['P_30']*100, metrics['P_100']*100,
+                        metrics['P_200']*100, metrics['P_500']*100, metrics['P_1000']*100];
+            var label2 = [5, 10, 15, 20, 30, 100, 200, 500, 1000]
+
+            var steppedLineSettings = {
+                steppedLine: 'before',
+                label: '{{ source_result }}: {% trans "Precision x Recall" %}',
+                color: window.chartColors.red,
+                curveLabel: '{{ model_result }} {{ expansion_result }}',
+                yLabel: 'Interpolated Precision',
+                xLabel: 'Recall'
+            };
+            var steppedLineSettings2 = {
+                steppedLine: false,
+                label: '{{ source_result }}: {% trans "Mean Precision P@X" %}',
+                color: window.chartColors.green,
+                curveLabel: '{{ model_result }} {{ expansion_result }}',
+                yLabel: 'Precision (%)',
+                xLabel: 'Documents'
+            };
+
+            var ctx = prec_rec_chart.getContext('2d');
+            var ctx2 = prec_chart.getContext('2d');
+            var config = createConfig(steppedLineSettings, data, label);
+            var config2 = createConfig(steppedLineSettings2, data2, label2);
+
+            new Chart(ctx, config);
+            new Chart(ctx2, config2);
+        };
+
+</script>
+
+{% endblock %}

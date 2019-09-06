@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Recommendation" %}{% endblock %}
+{% block content %}
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("/static/img/load.gif") right center no-repeat;
+        }
+
+        .ui-autocomplete {
+            position: absolute;
+            cursor: default; /*max-*/
+            width: 300px;
+            overflow: auto;
+            padding-right: 20px;
+        }
+        .ui-menu .ui-menu-item h4 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+
+	<div class="jumbotron">
+        <span class="text-center">
+          <h2 class="display-3">Módulo de recomendação de notícias - </h2>
+        </span>
+        <hr class="my-4">
+
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" onclick="history.back()" role="button">{% trans "Back" %}</a>
+        </p>
+
+    </div>
+
+{% endblock %}

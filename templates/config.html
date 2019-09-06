@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load tags %}
+
+
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Configurations" %}{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div id="wrapper">
+
+        <div class="container">
+
+            <div class="jumbotron">
+
+                <!-- end section -->
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <section class="config">
+
+                            <div class="row">
+                                <div class="col-md-12 left-align">
+                                    <h2 class="dark-text">Configuration
+                                    </h2>
+                                    <hr>
+                                    <div class="row">
+                                        {% bootstrap_messages %}
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Recommender</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                {# Aqui fica a opção das Coleções #}
+                                                  <div class="col-sm-2 col-md-2">
+                                                      <label class="control-label">{% trans "Collection" %}</label>
+                                                      <select id="source_select" name="source_select" class="form-control">
+                                                          <option value="z5news">Z5 News</option>
+                                                          <option value="z5news_brasil">Z5 News Brasil</option>
+                                                        {% comment %}  {% for source in source_list %}
+                                                            <option value="{{ source.slug }}" {% if source.slug == source_select %} selected {% endif %}>{{ source.name }}</option>
+                                                          {% endfor %}{% endcomment %}
+                                                      </select>
+                                                  </div>
+                                                <div class="col-sm-4 col-md-4">
+                                                    <p>
+                                                        <br>
+                                                    <a class="btn btn-primary btn-lg" href="/crawler_pages" role="button">{% trans "Últimas notícias" %}</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- // end .col -->
+
+            </div>
+        </div>
+        <!-- // end .row -->
+
+    </div>
+    <!-- // end container -->
+
+    </div>
+
+
+    <hr class="my-4">
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" onclick="history.back()" role="button">{% trans "Back" %}</a>
+    </p>
+
+{% endblock %}
