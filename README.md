@@ -10,14 +10,6 @@ Trabalho
 ------------
 .pdf (será distribuida em breve)
 
-Recursos
-------------
-Dísponivel em: https://drive.google.com/drive/folders/1kMuictsfTVKPQGt3c3QXo5uvbfQVGIF8?usp=sharing
-
-- Apostila SQL Server - Editora Impacta.pdf
-- Apostila DMBOK.pdf
-- Apostila PowerBI - Editora Impacta.pdf
-
 --------------------------------------------------------------------------------------------------
 Recursos do Luppar News-Rec
 -----------
@@ -32,6 +24,7 @@ Coleções de documentos
 - Z12News (Coleção em Inglês com 12 tópicos)
 
 Disponíveis em: /data
+- Arquivos de Treinamento: reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
 
 Bases em Arquivos
 -------------
