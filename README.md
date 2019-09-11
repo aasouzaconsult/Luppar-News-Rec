@@ -1,5 +1,7 @@
-# Luppar News-Rec
+# *Luppar News-Rec*
 Luppar News-Rec: Um Recomendador Inteligente de Notícias
+
+*O **Luppar News-Rec** é um SRN composto por algoritmos clássicos de classificação que trabalham em conjunto com representações de documentos para solucionar o problema de classificação de notícias de forma a trazer os documentos(notícias) que atendam a necessidade do usuário. A metodologia que segue esse trabalho divide os esforços da implementação do SRN em três etapas: Subsistema de Captura, Pré-Processamento e Armazenamento, Subsistema de Classificação de Notícias e Subsistema de Aquisição de Perfil de Assinantes e Distribuição.*
 
 Softwares
 ---------
