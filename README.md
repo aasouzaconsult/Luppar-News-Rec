@@ -8,7 +8,7 @@ Softwares
 - Django
 - Python 3.7 (principais bibliotecas: Numpy, NLTK, Scikit-Learn, Gensim, Matplotlib, BeautifulSoup)
 
-<a href=“http://exemplo.com/“>Flex Grid</a>
+<a href=“https://numpy.org/“>Flex Grid</a>
 
 Trabalho
 ------------
