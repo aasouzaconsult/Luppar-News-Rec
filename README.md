@@ -7,8 +7,11 @@ Softwares
 ---------
 - Django
 - Python 3.7 (principais bibliotecas: <a href='https://numpy.org/'>Numpy</a>, 
-                                      <a href='https://numpy.org/'>NLTK</a>, 
-                                      Scikit-Learn, Gensim, Matplotlib, BeautifulSoup)
+                                      <a href='https://www.nltk.org/'>NLTK</a>,
+                                      <a href='https://scikit-learn.org/stable/'>Scikit-Learn</a>,
+                                      <a href='https://radimrehurek.com/gensim/'>Gensim</a>,
+                                      <a href='https://matplotlib.org/'>Matplotlib</a>,
+                                      <a href='https://www.crummy.com/software/BeautifulSoup/bs4/doc/'>BeautifulSoup</a>)
 
 
 
