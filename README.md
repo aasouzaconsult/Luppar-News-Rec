@@ -46,7 +46,7 @@ Coleções de documentos
 -----
 - **Z5News** -> Arquivos de Teste com 187 notícias dos sites: <a href='https://www.reuters.com/'>reuters</a> e <a href='https://inshorts.com/en/read'>inshorts</a>.
     - reuters_X_Test_pp_new_1d.ipy | reuters_y_Test_pp_new_1d.ipy | reuters_z_Test_pp_new_1d.ipy
-- **Z5NewsBrasil** -> Arquivos de Teste com 189 notícias do site: <a href='https://noticias.uol.com.br/'>uol notícias (agregador - vários sites de notícias - Folha de São Paulo, BBC Brasil, Reuters Brasil e etc)</a>.
+- **Z5NewsBrasil** -> Arquivos de Teste com 189 notícias do site: <a href='https://noticias.uol.com.br/'>uol notícias (agregador)</a>.
     - g1_X_test_pp_new_1d.ipy | g1_y_test_pp_new_1d.ipy | g1_z_test_pp_new_1d.ipy
 - **Z12News** -> Arquivos de Teste com 232 notícias dos sites: <a href='https://www.reuters.com/'>reuters</a> e <a href='https://inshorts.com/en/read'>inshorts</a>.
     - reuters_X_Z12_pp_Test_1d.ipy | reuters_y_Z12_pp_Test_1d.ipy | reuters_z_Z12_pp_Test_1d.ipy
