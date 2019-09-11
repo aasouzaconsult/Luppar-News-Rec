@@ -67,4 +67,4 @@ Observações
 - **Vetores *embeddings* para coleções Z5News e Z12News** (Se encontram na pasta: **\data\emb**)
 - **Modelos gerados para coleções Z5News, Z5NewsBrasil e Z12News** (Se encontram na pasta: **\data\pred**)
 - **Página** (Se encontram na pasta: **\templates**)
-- **Implementação** (Se encontram na pasta: **\engine** ~~será distribuida em breve~~)
+- **Implementação** (Se encontram na pasta: ~~**\engine** será distribuida em breve~~)
