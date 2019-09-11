@@ -51,8 +51,8 @@ Informe seu e-mail caso deseje receber notícias dos tópicos escolhidos por e-m
 
 Botões
 -------------
-- Recomendar (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
-- Baixar e Recomendar (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
+- *Recomendar (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
+- *Baixar e Recomendar (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
 
 --------------------------------------------------------------------------------------------------
 2° Dia
