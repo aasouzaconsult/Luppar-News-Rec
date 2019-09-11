@@ -27,7 +27,7 @@ Disponíveis em: /data
 - Z5News -> Arquivos de Treinamento: reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
 - Z5NewsBrasil -> Arquivos de Treinamento: g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
 - Z12News -> Arquivos de Treinamento: reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
-
+-----
 - Z5News -> Arquivos de Teste: reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
 - Z5NewsBrasil -> Arquivos de Teste: g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
 - Z12News -> Arquivos de Teste: reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
