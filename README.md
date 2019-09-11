@@ -5,7 +5,7 @@ Luppar News-Rec: Um Recomendador Inteligente de Notícias
 
 Softwares
 ---------
-- Django
+- <a href='https://www.djangoproject.com/'>Django</a>
 - Python 3.7 (principais bibliotecas: <a href='https://numpy.org/'>Numpy</a>, 
                                       <a href='https://www.nltk.org/'>NLTK</a>,
                                       <a href='https://scikit-learn.org/stable/'>Scikit-Learn</a>,
