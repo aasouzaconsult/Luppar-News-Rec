@@ -21,9 +21,11 @@ Link:
 Coleções de documentos
 -----
 - **Z5News** (Coleção em Inglês com 5 tópicos)
-    - teste
+    - sportsNews, politicsNews, technologyNews, PersonalFinance e brazil-news 
 - **Z5NewsBrasil** (Coleção em Portugues com 5 tópicos)
+    - esporteNews, politicaNews, tecnologiaNews, financaPessoal e educacaonews
 - **Z12News** (Coleção em Inglês com 12 tópicos)
+    - sportsnews, politicsNews, technologyNews, PersonalFinance, brazil-news, aerospace-defense, autos, commoditiesNews, fundsNews, foreignexchangeNews, healthnews e environmentnews 
 
 *Disponíveis em:* **/data**
 - **Z5News** -> Arquivos de Treinamento: reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
