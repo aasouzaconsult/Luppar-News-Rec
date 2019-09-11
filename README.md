@@ -33,9 +33,9 @@ Disponíveis em: /data
 - Z5NewsBrasil -> Arquivos de Teste: g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
 - Z12News -> Arquivos de Teste: reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
 
-Bases em Arquivos
+Representações de Documentos
 -------------
-- BaseDemonstracao.xlsx
+- FastText + E2V-IDF ()
 - BaseDemonstracao_Produto.xlsx
 
 Scripts (.sql)
