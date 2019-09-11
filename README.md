@@ -66,6 +66,10 @@ Receba notícias por E-mail
 -------------
 Informe seu e-mail caso deseje receber notícias dos tópicos escolhidos por e-mail.
 
+Métricas
+-------------
+Informe **Sim** caso deseje que as métricas da combinação escolhida sejam expostas na tela.
+
 Botões
 -------------
 - **Recomendar** (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
