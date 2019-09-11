@@ -21,7 +21,7 @@ Trabalho
 
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
-Recursos do Luppar News-Rec
+Recursos do *Luppar News-Rec*
 -----------
 *News Recommender System using Word Embeddings for study and research.*
 
@@ -37,11 +37,11 @@ Coleções de documentos
     - sportsnews, politicsNews, technologyNews, PersonalFinance, brazil-news, aerospace-defense, autos, commoditiesNews, fundsNews, foreignexchangeNews, healthnews e environmentnews 
 
 *Disponíveis em:* **/data**
-- **Z5News** -> Arquivos de Treinamento com 42.532 notícias.
+- **Z5News** -> Arquivos de Treinamento com 42.532 notícias do site <a href='https://www.reuters.com/'>reuters</a>.
     - reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
-- **Z5NewsBrasil** -> Arquivos de Treinamento com 24.177 notícias. 
+- **Z5NewsBrasil** -> Arquivos de Treinamento com 24.177 notícias do site <a href='https://g1.globo.com/'>g1 news</a>. 
     - g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
-- **Z12News** -> Arquivos de Treinamento com 41.849 notícias.
+- **Z12News** -> Arquivos de Treinamento com 41.849 notícias do <a href='https://www.reuters.com/'>reuters</a>.
     - reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
 -----
 - **Z5News** -> Arquivos de Teste com 187 notícias
