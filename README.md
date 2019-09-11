@@ -6,7 +6,7 @@ Luppar News-Rec: Um Recomendador Inteligente de Notícias
 Softwares
 ---------
 - Django
-- Python 3.7 (principais bibliotecas: Numpy, NLTK, Scikit-Learn, Gensim, Matplotlib, BeautifulSoup)
+- Python 3.7 (principais bibliotecas: [Numpy] (https://numpy.org/), NLTK, Scikit-Learn, Gensim, Matplotlib, BeautifulSoup)
 
 Trabalho
 ------------
