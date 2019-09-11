@@ -33,8 +33,7 @@ Coleções de documentos
 - **Z5NewsBrasil** -> Arquivos de Teste: g1_X_test_pp_new_1d.ipy | g1_y_test_pp_new_1d.ipy | g1_z_test_pp_new_1d.ipy
 - **Z12News** -> Arquivos de Teste: reuters_X_Z12_pp_Test_1d.ipy | reuters_y_Z12_pp_Test_1d.ipy | reuters_z_Z12_pp_Test_1d.ipy
 
-
- Markup : 1. A numbered list
+Markup : 1. A numbered list
               1. A nested numbered list
               2. Which is numbered
           2. Which is numbered
