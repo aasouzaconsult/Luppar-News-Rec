@@ -14,7 +14,7 @@ Trabalho
 --------------------------------------------------------------------------------------------------
 Recursos do Luppar News-Rec
 -----------
-News Recommender System using Word Embeddings for study and research.
+*News Recommender System using Word Embeddings for study and research.*
 
 Dísponivel em: http://luppar.com/recommender
 
@@ -44,14 +44,14 @@ Coleções de documentos
 
 Representações de Documentos
 -------------
-- **FastText + E2V-IDF** (Representação Embedding: FastText combinada com a abordagem E2V-IDF (ponderada por IDF))
-- **Word2Vec + E2V-IDF** (Representação Embedding: Word2Vec combinada com a abordagem E2V-IDF (ponderada por IDF))
-- **BoW** (Representação Bag-of-Words - saco de palavras)
+- **FastText + E2V-IDF** (Representação *Embedding*: FastText combinada com a abordagem E2V-IDF (ponderada por IDF))
+- **Word2Vec + E2V-IDF** (Representação *Embedding*: Word2Vec combinada com a abordagem E2V-IDF (ponderada por IDF))
+- **BoW** (Representação *Bag-of-Words* - saco de palavras)
 
 Classificadores de Texto
 -------------
-- **SVM (RBF)** (Classificador SVM - Support Vector Machine com Kernel: RBF - Radial Basis Function)
-- **Random Forest (RF)** (Classificador Random Forest - Floresta Aleatória)
+- **SVM (RBF)** (Classificador SVM - *Support Vector Machine* com *Kernel*: RBF - *Radial Basis Function*)
+- **Random Forest (RF)** (Classificador *Random Forest* - Floresta Aleatória)
 
 Receba notícias por E-mail
 -------------
@@ -61,3 +61,8 @@ Botões
 -------------
 - **Recomendar** (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
 - **Baixar e Recomendar** (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
+
+Observações
+-------------
+- **Vetores *embeddings* para coleções Z5News e Z12News** (Se encontram na pasta: **\data\emb**)
+- **Modelos gerados para coleções Z5News, Z5NewsBrasil e Z12News** (Se encontram na pasta: **\data\pred**)
