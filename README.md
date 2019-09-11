@@ -61,7 +61,7 @@ Botões
 -------------
 - **Recomendar** (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
 - **Baixar e Recomendar** (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
-    - **Subsistema 1** - Baixar (*web crawler*), Pré-Processar (Remoção de Pontuação, Numeração, *StopWords* e aplicado *Stemming*)
+    - **Subsistema 1** - Baixar (*web crawler*), Pré-Processar (Remoção de Pontuação, Numeração, *StopWords*, aplicado *Stemming*) e armazenamento das notícias
     - **Subsistema 2** - Classificar (combinações representação de documentos x classificadores de texto)
     - **Subsistema 3** - Recomendador (utilizando abordagem baseado em conteúdo (subscrição em itens))
 
