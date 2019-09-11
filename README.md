@@ -11,6 +11,7 @@ Trabalho
 .pdf (será distribuida em breve)
 
 --------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 Recursos do Luppar News-Rec
 -----------
 News Recommender System using Word Embeddings for study and research.
