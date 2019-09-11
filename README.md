@@ -21,6 +21,7 @@ Link:
 Coleções de documentos
 -----
 - Z5News (Coleção em Inglês com 5 tópicos)
+-- 
 - Z5NewsBrasil (Coleção em Portugues com 5 tópicos)
 - Z12News (Coleção em Inglês com 12 tópicos)
 
@@ -35,28 +36,23 @@ Disponíveis em: /data
 
 Representações de Documentos
 -------------
-- FastText + E2V-IDF ()
-- BaseDemonstracao_Produto.xlsx
+- FastText + E2V-IDF (Representação Embedding: FastText combinada com a abordagem E2V-IDF (ponderada por IDF))
+- Word2Vec + E2V-IDF (Representação Embedding: Word2Vec combinada com a abordagem E2V-IDF (ponderada por IDF))
+- BoW (Representação Bag-of-Words - saco de palavras)
 
-Scripts (.sql)
+Classificadores de Texto
 -------------
-- AmbienteSQLServer.sql
+- SVM (RBF) (Classificador SVM - Support Vector Machine com Kernel: RBF - Radial Basis Function)
+- Random Forest (RF) (Classificador Random Forest - Floresta Aleatória)
 
-Praticando em casa...
+Receba notícias por E-mail
 -------------
-Usando o SQL Server ou qualquer outro SGBD, criar um banco de dados para Controle de Vendas, algumas das condições:
-- Cada Venda tem que ter um Vendedor associado
-- Cada Venda deve estar associada a um Cliente
-- Cada Cliente terá um Nome, CPF, Telefone, Endereço completo (sugestão: Logradouro, CEP, Bairro, Cidade, Estado. Em campos separados)
-- Cada Venda pode ter mais de um Produto (Item de Venda)
-- Cada Produto deve ter um código, Descrição
-- Para cada Item de Venda deve ser informado, o código e descrição do produto, quantidade vendida, o valor unitário e o Valor total
+Informe seu e-mail caso deseje receber notícias dos tópicos escolhidos por e-mail.
 
-* Sugestão: alimentar com dados desde Janeiro de 2016, com clientes em diversos Bairros, Cidades e Estado. Usem a criatividade, exemplos (Ambiente_Exemplo_ControleDeVendas.sql e AmbienteSQLServer.sql) e experiência!
-
-Gráficos (no Power BI ou qualquer outra ferramenta de Self-Service BI)
-- Usem a criatividades
-- Alguns exemplos: Total de Vendas por Ano, por Mês, por Estado (Mapa), Gráfico de Vendas e etc
+Botões
+-------------
+- Recomendar (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
+- Baixar e Recomendar (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
 
 --------------------------------------------------------------------------------------------------
 2° Dia
