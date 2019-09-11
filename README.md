@@ -28,13 +28,19 @@ Coleções de documentos
     - sportsnews, politicsNews, technologyNews, PersonalFinance, brazil-news, aerospace-defense, autos, commoditiesNews, fundsNews, foreignexchangeNews, healthnews e environmentnews 
 
 *Disponíveis em:* **/data**
-- **Z5News** -> Arquivos de Treinamento: reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
-- **Z5NewsBrasil** -> Arquivos de Treinamento: g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
-- **Z12News** -> Arquivos de Treinamento: reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
+- **Z5News** -> Arquivos de Treinamento com 42.532 notícias.
+    - reuters_X_pp_new.ipy | reuters_y_pp_new.ipy | reuters_z_pp_new.ipy
+- **Z5NewsBrasil** -> Arquivos de Treinamento com 24.177 notícias. 
+    - g1_X_pp_new.ipy | g1_y_pp_new.ipy | g1_z_pp_new.ipy
+- **Z12News** -> Arquivos de Treinamento com 41.849 notícias.
+    - reuters_X_Z12_pp.ipy | reuters_y_Z12_pp.ipy | reuters_z_Z12_pp.ipy
 -----
-- **Z5News** -> Arquivos de Teste: reuters_X_Test_pp_new_1d.ipy | reuters_y_Test_pp_new_1d.ipy | reuters_z_Test_pp_new_1d.ipy
-- **Z5NewsBrasil** -> Arquivos de Teste: g1_X_test_pp_new_1d.ipy | g1_y_test_pp_new_1d.ipy | g1_z_test_pp_new_1d.ipy
-- **Z12News** -> Arquivos de Teste: reuters_X_Z12_pp_Test_1d.ipy | reuters_y_Z12_pp_Test_1d.ipy | reuters_z_Z12_pp_Test_1d.ipy
+- **Z5News** -> Arquivos de Teste com 187 notícias
+    - reuters_X_Test_pp_new_1d.ipy | reuters_y_Test_pp_new_1d.ipy | reuters_z_Test_pp_new_1d.ipy
+- **Z5NewsBrasil** -> Arquivos de Teste com 189 notícias
+    - g1_X_test_pp_new_1d.ipy | g1_y_test_pp_new_1d.ipy | g1_z_test_pp_new_1d.ipy
+- **Z12News** -> Arquivos de Teste com 232 notícias
+    - reuters_X_Z12_pp_Test_1d.ipy | reuters_y_Z12_pp_Test_1d.ipy | reuters_z_Z12_pp_Test_1d.ipy
 
 Representações de Documentos
 -------------
