@@ -74,9 +74,11 @@ Classificadores de Texto
 - **SVM (RBF)** (Classificador SVM - *Support Vector Machine* com *Kernel*: RBF - *Radial Basis Function*)
 - **Random Forest (RF)** (Classificador *Random Forest* - Floresta Aleatória)
 
-Receba notícias por E-mail
+Receba notícias por E-mail (Crie seu perfil de Assinante)
 -------------
-Informe seu e-mail caso deseje receber notícias dos tópicos escolhidos por e-mail.
+Informe seu e-mail caso deseje receber notícias diariamente (1x) via e-mail.
+- Para salvar seu perfil de assinante:
+    - informe seu e-mail, escolha os tópicos de sua preferência e clique no botão: **Recomendar**.
 
 Métricas
 -------------
