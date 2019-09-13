@@ -99,6 +99,15 @@ Observações
 - **Página** (Se encontram na pasta: **\templates**)
 - **Implementação** (Se encontram na pasta: ~~**\engine** será distribuida em breve~~)
 
+Melhores combinações (DICA)
+-------------
+- Para a coleção Z5News
+    - Representação: **FastText + E2V-IDF** + Classificador: **SVM (RBF)**;
+- Para a coleção Z5NewsBrasil
+    - Representação: **BoW** + Classificador: **Random Forest (RF)**;
+- Para a coleção Z12News
+    - Representação: **Word2Vec + E2V-IDF** + Classificador: **SVM (RBF)**.
+    
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 Dúvidas ou Sugestões:
