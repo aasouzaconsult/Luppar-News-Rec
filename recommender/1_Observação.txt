@@ -1,0 +1,2 @@
+Crawler_Reuters_Test.py foi renomeado para Crawler_Z5News_Test.py (pra ficar um padrão)
+- mas não sei onde ele tá sendo referenciado, pois dá erro quando renomeio :(
