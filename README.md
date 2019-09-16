@@ -95,7 +95,8 @@ Botões
 Observações
 -------------
 - **Vetores *embeddings* para coleções Z5News e Z12News** (Se encontram na pasta: **\data\emb**)
-- **Modelos gerados para coleções Z5News, Z5NewsBrasil e Z12News** (Se encontram na pasta: **\data\pred**)
+- **Modelos gerados para coleções - Combinação Representação + Classificadores** (Se encontram na pasta: **model\**)
+- **Predições geradas para coleções - utilizado para Emuladores** (Se encontram na pasta: **\data\pred**)
 - **Página** (Se encontram na pasta: **\templates**)
 - **Implementação** (Se encontram na pasta: ~~**\engine** será distribuida em breve~~)
 
