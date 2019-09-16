@@ -42,9 +42,9 @@ Coleções de documentos
     - reuters_y_pp_new.ipy *(Tópicos)*
     - reuters_z_pp_new.ipy *(Notícias - completas)*
 - **Z5NewsBrasil** -> Arquivos de Treinamento com 24.177 notícias do site <a href='https://g1.globo.com/'>g1 news</a>. 
-    - g1_X_pp_new.ipy *(Notícias - pré-processadas)*
-    - g1_y_pp_new.ipy *(Tópicos)*
-    - g1_z_pp_new.ipy *(Notícias - completas)*
+    - g1_X_Z5BR_pp.ipy *(Notícias - pré-processadas)*
+    - g1_y_Z5BR_pp.ipy *(Tópicos)*
+    - g1_z_Z5BR_pp.ipy *(Notícias - completas)*
 - **Z12News** -> Arquivos de Treinamento com 41.849 notícias do site <a href='https://www.reuters.com/'>reuters</a>.
     - reuters_X_Z12_pp.ipy *(Notícias - pré-processadas)*
     - reuters_y_Z12_pp.ipy *(Tópicos)*
@@ -55,9 +55,9 @@ Coleções de documentos
     - reuters_y_Test_pp_new_1d.ipy *(Tópicos)*
     - reuters_z_Test_pp_new_1d.ipy *(Notícias de teste - completas)*
 - **Z5NewsBrasil** -> Arquivos de Teste com 189 notícias do site: <a href='https://noticias.uol.com.br/'>uol notícias (agregador)</a>.
-    - g1_X_test_pp_new_1d.ipy *(Notícias de teste - pré-processadas)*
-    - g1_y_test_pp_new_1d.ipy *(Tópicos)*
-    - g1_z_test_pp_new_1d.ipy *(Notícias de teste - completas)*
+    - g1_X_Z5BR_pp_Test_1d.ipy *(Notícias de teste - pré-processadas)*
+    - g1_y_Z5BR_pp_Test_1d.ipy *(Tópicos)*
+    - g1_z_Z5BR_pp_Test_1d.ipy *(Notícias de teste - completas)*
 - **Z12News** -> Arquivos de Teste com 232 notícias dos sites: <a href='https://www.reuters.com/'>reuters</a> e <a href='https://inshorts.com/en/read'>inshorts</a>.
     - reuters_X_Z12_pp_Test_1d.ipy *(Notícias de teste - pré-processadas)*
     - reuters_y_Z12_pp_Test_1d.ipy *(Tópicos)*
