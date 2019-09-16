@@ -97,7 +97,7 @@ Observações
 - **Vetores *embeddings* para coleções Z5News e Z12News** (Se encontram na pasta: **\data\emb**)
 - **Modelos gerados para coleções - Combinação Representação + Classificadores** (Se encontram na pasta: **\model**)
 - **Página** (Se encontram na pasta: **\templates**)
-- **Implementação** (Se encontram na pasta: ~~**\engine** será distribuida em breve~~)
+- **Implementação** (Se encontram na pasta: **\recommender**)
 - **Predições geradas para coleções - utilizado para Emuladores** (Se encontram na pasta: **\data\pred**)
 
 Melhores combinações (DICA)
