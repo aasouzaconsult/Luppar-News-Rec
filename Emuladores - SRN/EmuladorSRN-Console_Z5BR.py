@@ -12,9 +12,9 @@ print ("Importando as coleções de documentos...") #
 ###################################################
 
 # Stemmed
-X = pickle.load(open('data/g1_X_pp_new.ipy', 'rb'))
-y = pickle.load(open('data/g1_y_pp_new.ipy', 'rb'))
-z = pickle.load(open('data/g1_z_pp_new.ipy', 'rb'))
+X = pickle.load(open('data/g1_X_Z5BR_pp.ipy', 'rb'))
+y = pickle.load(open('data/g1_y_Z5BR_pp.ipy', 'rb'))
+z = pickle.load(open('data/g1_z_Z5BR_pp.ipy', 'rb'))
 
 X, y, z = np.array(X), np.array(y), np.array(z)
 
@@ -23,9 +23,9 @@ print ("Z5NewsBrasil - Total de notícias curtas - Train: %s" % len(y))
 # Test - Diversas fontes (agregador - UOL)
 ###################################################
 # Stemmed
-Xt = pickle.load(open('data/g1_X_test_pp_new_1d.ipy', 'rb'))
-yt = pickle.load(open('data/g1_y_test_pp_new_1d.ipy', 'rb'))
-zt = pickle.load(open('data/g1_z_test_pp_new_1d.ipy', 'rb'))
+Xt = pickle.load(open('data/g1_X_Z5BR_pp_Test_1d.ipy', 'rb'))
+yt = pickle.load(open('data/g1_y_Z5BR_pp_Test_1d.ipy', 'rb'))
+zt = pickle.load(open('data/g1_z_Z5BR_pp_Test_1d.ipy', 'rb'))
 
 Xt, yt, zt = np.array(Xt), np.array(yt), np.array(zt)
 
