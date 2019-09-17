@@ -111,12 +111,6 @@ Melhores combinações (DICA)
 
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
-Dúvidas ou Sugestões:
------------
-<a href="mailto:aasouzaconsult@gmail.com">Via E-mail</a>
-
---------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------
 Montagem do ambiente (Linux):
 -----------
 
@@ -124,10 +118,11 @@ Montagem do ambiente (Linux):
 - <a href='https://www.postgresql.org/download/'>PostgreSQL</a>
 - <a href='https://www.python.org/downloads/'>Python 3.7</a>
 - Instalar git
-  ```
-  $ sudo apt install git
-  ```
+```
+$ sudo apt install git
+```
 
+Baixar repositório:
 ```
 $ cd
 $ https://github.com/aasouzaconsult/Luppar-News-Rec.git
@@ -160,3 +155,9 @@ $ python3 manage.py runserver
 Caminho padrão do servidor:
 --------------------------
 http://localhost:8000/recommender
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+Dúvidas ou Sugestões:
+-----------
+<a href="mailto:aasouzaconsult@gmail.com">Via E-mail</a>
