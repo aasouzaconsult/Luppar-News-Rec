@@ -114,3 +114,45 @@ Melhores combinações (DICA)
 Dúvidas ou Sugestões:
 -----------
 <a href="mailto:aasouzaconsult@gmail.com">Via E-mail</a>
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+Montagem do ambiente:
+-----------
+
+Pré-Requisitos
+- PostgreSQL instalado
+- Python 3.6
+
+```
+$ cd
+$ https://github.com/aasouzaconsult/Luppar-News-Rec.git
+$ cd luppar
+$ pip3 install -r requirements.txt
+$ cp .env.example .env
+$ vim .env
+
+```
+Adicionar no arquivo .env as seguintes configurações:
+
+```
+DEBUG=True
+SECRET_KEY=s3cr3t
+DATABASE_SCHEME=luppar
+DATABASE_NAME=postgres
+DATABASE_URL=localhost
+DATABASE_USER=postgres
+DATABASE_PASS=admin
+DATABASE_PORT=5432
+```
+
+Execute no terminal:
+```
+$ python3 manage.py migrate
+$ python3 manage.py createsuperuser --username=admin --email=admin@example.com
+$ python3 manage.py runserver
+```
+
+Caminho padrão do servidor:
+--------------------------
+http://localhost:8000/recommender
