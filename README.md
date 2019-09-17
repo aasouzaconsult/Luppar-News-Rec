@@ -117,11 +117,11 @@ Dúvidas ou Sugestões:
 
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
-Montagem do ambiente:
+Montagem do ambiente (Linux):
 -----------
 
-Pré-Requisitos
-- PostgreSQL instalado
+**Pré-Requisitos**
+- <a href='https://www.postgresql.org/download/'>PostgreSQL</a>
 - Python 3.6
 
 ```
