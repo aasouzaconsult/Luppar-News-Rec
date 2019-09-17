@@ -115,9 +115,21 @@ Montagem do ambiente (Linux):
 -----------
 
 **Pré-Requisitos**
-- <a href='https://www.postgresql.org/download/'>PostgreSQL</a>
-- <a href='https://www.python.org/downloads/'>Python 3.7</a>
-- Instalar git
+- GCC
+```
+$ sudo apt-get install gcc
+```
+- PYTHON (Instalar python > 3.6 e Pip3)
+```
+$ sudo apt install python3
+$ sudo apt install python3-pip
+```
+- PostgreSQL (Instalar)
+```
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+```
+- Instalar Git
 ```
 $ sudo apt install git
 ```
