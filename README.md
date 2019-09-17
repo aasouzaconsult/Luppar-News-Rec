@@ -140,7 +140,7 @@ $ cd
 $ https://github.com/aasouzaconsult/Luppar-News-Rec.git
 $ cd luppar
 $ pip3 install -r requirements.txt
-$ cp .env.example .env
+$ cp env .env
 $ vim .env
 
 ```
