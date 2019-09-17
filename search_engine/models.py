@@ -97,6 +97,28 @@ class DocumentData(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+
+class RecommRequest(models.Model):
+
+    # Fields
+    created = models.DateTimeField(auto_now_add=True, editable=False)
+    email = models.TextField(max_length=1000)
+    topics = models.TextField(max_length=1000)
+
+    # Relationship Fields
+
+    source = models.CharField(max_length=100,null=True,blank=True)
+    doc_recomm = models.CharField(max_length=100, null=True, blank=True)
+    class_model = models.CharField(max_length=100, null=True, blank=True)
+    page = models.IntegerField(null=True,blank=True)
+    time_request = models.FloatField(null=True, blank=True)
+
+    class Meta:
+        ordering = ('-created',)
+
+    def __unicode__(self):
+        return u'%s' % self.pk
+
 class QueryData(models.Model):
     idq = models.BigIntegerField()
     source = models.ForeignKey(SourceType, models.DO_NOTHING, null=True, blank=True)
