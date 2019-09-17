@@ -138,7 +138,7 @@ $ sudo apt install git
 ```
 $ cd
 $ https://github.com/aasouzaconsult/Luppar-News-Rec.git
-$ cd luppar
+$ cd Luppar-News-Rec
 $ pip3 install -r requirements.txt
 $ cp env .env
 $ vim .env
