@@ -129,6 +129,12 @@ $ sudo apt install python3-pip
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib
 ```
+
+- PostgreSQL (Criar SCHEMA - no banco postgres)
+```
+CREATE SCHEMA luppar;
+```
+
 - Git (Instalar)
 ```
 $ sudo apt install git
