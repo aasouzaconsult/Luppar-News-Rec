@@ -122,7 +122,7 @@ Montagem do ambiente (Linux):
 
 **Pré-Requisitos**
 - <a href='https://www.postgresql.org/download/'>PostgreSQL</a>
-- Python 3.6
+- <a href='https://www.python.org/downloads/'>Python 3.7</a>
 
 ```
 $ cd
