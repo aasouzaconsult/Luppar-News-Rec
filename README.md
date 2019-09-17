@@ -129,12 +129,12 @@ $ sudo apt install python3-pip
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib
 ```
-- Instalar Git
+- Git (Instalar)
 ```
 $ sudo apt install git
 ```
 
-Baixar repositório:
+**Baixar repositório:**
 ```
 $ cd
 $ https://github.com/aasouzaconsult/Luppar-News-Rec.git
@@ -144,7 +144,7 @@ $ cp .env.example .env
 $ vim .env
 
 ```
-Adicionar no arquivo .env as seguintes configurações:
+**Adicionar no arquivo .env as seguintes configurações:**
 
 ```
 DEBUG=True
@@ -157,15 +157,14 @@ DATABASE_PASS=admin
 DATABASE_PORT=5432
 ```
 
-Execute no terminal:
+**Execute no terminal:**
 ```
 $ python3 manage.py migrate
 $ python3 manage.py createsuperuser --username=admin --email=admin@example.com
 $ python3 manage.py runserver
 ```
 
-Caminho padrão do servidor:
---------------------------
+**Caminho padrão do servidor:**
 http://localhost:8000/recommender
 
 --------------------------------------------------------------------------------------------------
