@@ -123,6 +123,10 @@ Montagem do ambiente (Linux):
 **Pré-Requisitos**
 - <a href='https://www.postgresql.org/download/'>PostgreSQL</a>
 - <a href='https://www.python.org/downloads/'>Python 3.7</a>
+- Instalar git
+  ```
+  $ sudo apt install git
+  ```
 
 ```
 $ cd
