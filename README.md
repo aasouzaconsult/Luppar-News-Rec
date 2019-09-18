@@ -87,7 +87,7 @@ Informe **Sim** caso deseje que as métricas da combinação escolhida sejam exp
 Botões
 -------------
 - **Recomendar** (Recomenda notícias, já armazenadas no Luppar News-Rec, conforme as seleções realizadas)
-- **Baixar e Recomendar** (Baixa as últimas notícias, faz o pré-processamento, gera o modelo conforme seleção da representação e classificador informado e retorna as notícias recomendadas com base nos tópicos selecionados)
+- **Baixar e Recomendar** (Baixa as últimas notícias, faz o pré-processamento, Classifica as novas notícias com base no modelo treinado para a combinação escolhida e recomenda as notícias com base nos tópicos selecionados)
     - **Subsistema 1** - Baixar (*web crawler*), Pré-Processar (Remoção de Pontuação, Numeração, *StopWords*, aplicado *Stemming*) e armazenamento das notícias;
     - **Subsistema 2** - Classificar de forma automática em tópicos, fazendo uso de *Machine learning*, as notícias armazenadas na etapa anterior (*Subsistema 1*), utilizando combinações entre representação de documentos e classificadores de texto;
     - **Subsistema 3** - Recomenda as notícias classificadas em tópicos na etapa anterior (*Subsistema 2*) com base nas preferências dos usuários (utilizando abordagem baseado em conteúdo (subscrição em itens)).
