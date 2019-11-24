@@ -25,7 +25,7 @@ Recursos do *Luppar News-Rec*
 -----------
 *News Recommender System using Word Embeddings for study and research.*
 
-Dísponivel em: http://luppar.com/recommender
+Disponível em: http://luppar.com/recommender
 
 Coleções de documentos
 -----
