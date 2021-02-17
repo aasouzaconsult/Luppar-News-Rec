@@ -30,7 +30,7 @@ pdfminer.six==20170720
 #pdftotext==1.1.0
 Pillow==4.3.0
 #pipreqs==0.4.9
-pycryptodome==3.4.7
+pycryptodome==3.6.6
 PyMySQL==0.7.11
 pyparsing==2.2.0
 python-dateutil==2.6.1
